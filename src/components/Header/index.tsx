@@ -11,18 +11,12 @@ const Header = () => {
         
     }
     return (
-        <header className="absolute top-0 left-0 w-full z-50 p-[9px]">
-            <nav>
-                <div className=" flex justify-center items-center gap-12">
-                    <Link href="/" className="flex relative w-20 h-20">
-                           <Image
-                            src="/images/titleIcon.png"
-                            alt= "Main Image"
-                            fill
-                            className="object-cover"
-                            priority
-                            sizes="100vw"
-                            />
+        <header className="abc absolute w-full z-50">
+            <div className='mx-52'>
+                <div className="flex justify-between items-center py-2">
+                    
+                    <Link href="/" className="flex relative">
+                        <Image src="/images/siteIcon.png" alt= "Main Image" width={84} height={84} priority />
                     </Link>
 
                     <div className="group relative">
@@ -60,7 +54,7 @@ const Header = () => {
 
                     <div className='flex'>
                         <Link href="/about" className="relative transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-200 before:absolute before:bg-white before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:top-7 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-200 after:absolute after:bg-white after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:top-7 after:right-[50%]">
-                        <span className='text-white'>About</span>
+                            <span className='text-white'>About</span>
                         </Link>
                     </div>
                     
@@ -72,8 +66,9 @@ const Header = () => {
                     </div>
 
                     <div className='flex'>
-                        <input className="searchInput w-[800px] rounded-full border border-gray-300 bg-white py-3 pl-12 pr-48 leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-md" placeholder="Search" type="text"/>
-                        <button onClick={toResearch} className="absolute cursor-pointer right-[1200px] top-[38px]">
+                        <input className="searchInput w-[800px] rounded-full border border-gray-300 bg-white py-3 pl-12 pr-48 leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-md" placeholder="Search" type="text" name='searchBox' id='1'/>
+
+                        <button onClick={toResearch} className="absolute cursor-pointer right-[1185px] top-[39px]">
                             <svg className="sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="#000000">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
@@ -93,7 +88,7 @@ const Header = () => {
                     </div>
 
                 </div>
-            </nav>
+            </div>
         </header>
     )
 }

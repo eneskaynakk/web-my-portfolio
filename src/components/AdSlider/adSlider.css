@@ -1,0 +1,27 @@
+
+.adSlider {
+  position: relative;
+}
+
+.adSlider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.adSlider::before,
+.adSlider::after {
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+  background-image: linear-gradient(90deg, #FFFFFF, transparent);
+  pointer-events: none;
+}
+
+.adSlider::after {
+  left: auto;
+  right: 0;
+  background-image: linear-gradient(270deg, #FFFFFF, transparent);
+}
