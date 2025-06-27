@@ -1,0 +1,26 @@
+.certificateSwiper {
+  position: relative;
+}
+
+.certificateSwiper .swiper-button-next,
+.certificateSwiper .swiper-button-prev {
+  padding: 20px 15px 20px 15px;
+  font-size: 20px !important;
+  background-color: #00a63e;
+  border-radius: 5px !important;
+}
+
+.certificateSwiper .swiper-button-next::after,
+.certificateSwiper .swiper-button-prev::after {
+  font-size: 20px !important; 
+  color: #364153 !important; 
+  border-radius: 5px !important;
+  
+}
+
+.certificateSwiper {
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: #364153;
+}

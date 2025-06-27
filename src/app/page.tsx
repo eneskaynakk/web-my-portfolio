@@ -1,11 +1,16 @@
-import { MainSlider, AdSlider } from '@/components';
+import { HeroSection, AdSlider, CertificateSlider, ProjectCard } from '@/components';
 
 export default function Home() {
 
     return (
-      <main>
-          <MainSlider/>
+      <main className='bg-black'>
+          <HeroSection/>
+      
           <AdSlider/>
+          
+          <CertificateSlider/>
+
+          <ProjectCard/>
       </main>
     );
 }

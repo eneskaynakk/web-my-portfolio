@@ -16,12 +16,12 @@
   left: 0;
   top: 0;
   z-index: 11;
-  background-image: linear-gradient(90deg, #FFFFFF, transparent);
+  background-image: linear-gradient(90deg, black, transparent);
   pointer-events: none;
 }
 
 .adSlider::after {
   left: auto;
   right: 0;
-  background-image: linear-gradient(270deg, #FFFFFF, transparent);
+  background-image: linear-gradient(270deg, black, transparent);
 }
