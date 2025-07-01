@@ -3,7 +3,7 @@ import { HeroSection, AdSlider, CertificateSlider, ProjectCard } from '@/compone
 export default function Home() {
 
     return (
-      <main className='bg-black'>
+      <main>
           <HeroSection/>
       
           <AdSlider/>

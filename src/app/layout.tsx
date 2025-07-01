@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Header, Footer } from '@/components';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display, Open_Sans } from 'next/font/google';
 
 import "./globals.css";
 
@@ -15,13 +15,25 @@ const interFont = Inter({
     variable: "--font-inter"
 });
 
+const playfairFont = Playfair_Display({
+    subsets: ['latin'],
+    weight: "600",
+    variable: "--font-playfair-display"
+});
+
+const openFont = Open_Sans({
+    subsets: ['latin'],
+    weight: "400",
+    variable: "--font-open-sans"
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${interFont.variable}`}>
+    <html lang="en" className={`${interFont.variable} ${playfairFont.variable} ${openFont.variable}`}>
       <body>
         <Header />
         {children}

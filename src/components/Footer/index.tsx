@@ -2,15 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { usePathname } from "next/navigation";
-
 const Footer = () => {
-
-    const pathname = usePathname();
-    
-    if (pathname === "/auth/register" || pathname === "/auth/login") {
-        return null;
-    }
 
     return (
         <footer className="bg-black relative mt-72">

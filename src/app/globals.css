@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-main: var(--font-inter);
+  --font-header-title: var(--font-inter);
+  --font-topic-title: var(--font-playfair-display);
+  --font-text: var(--font-open-sans);
+}
+
+@theme {
+  --color-b-black: oklch(0.1344 0 0); /*obsidian*/
+  --color-b-light-black: oklch(0.3211 0 0); /*carbon*/
+
+  --color-t-gold: oklch(0.7665 0.1387 91.06);
+  --color-t-white: oklch(0.9702 0 0);
 }
