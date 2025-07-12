@@ -1,4 +1,4 @@
-import { HeroSection, AdSlider, CertificateSlider, ProjectCard } from '@/components';
+import { HeroSection, AdSlider, CertificateSlider, ProjectSlider } from '@/components';
 
 export default function Home() {
 
@@ -6,11 +6,11 @@ export default function Home() {
       <main>
           <HeroSection/>
       
-          <AdSlider/>
-          
-          <CertificateSlider/>
+          <AdSlider>
+            <CertificateSlider/>
+          </AdSlider>
 
-          <ProjectCard/>
+          <ProjectSlider/>
       </main>
     );
 }

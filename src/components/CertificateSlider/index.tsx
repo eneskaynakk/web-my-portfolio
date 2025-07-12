@@ -1,102 +1,174 @@
 "use client"
-import Image from 'next/image';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { useWindowSize } from '@/hooks/useWindowSize'; 
+
+import Image from 'next/image';
+import InsiderImage from 'public/images/insiderQa.png'
+import TechTestImage from 'public/images/techTest.png'
+import UdemyTestImage from 'public/images/udemySoftwareTest.jpg'
+import TechSeleniumImage from 'public/images/techSelenium.png'
+import UdemyPostmanImage from 'public/images/udemyPostman.jpg'
+import TechApiImage from 'public/images/techApi.png'
 
 import './certificateSlider.css';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 function CertificateSlider() {
 
+  const windowWidth = useWindowSize();
+  const isMobile = windowWidth !== null && windowWidth < 1024;
+
+  if (windowWidth === null) return null;
+
   return (
-    <div className="container mx-auto mt-24">
-      <div className='mb-10'>
-        <h3 className='text-center text-green-600 text-3xl'>Certificates</h3>
-      </div>
-
-      <Swiper slidesPerView="auto" loop={true} spaceBetween={30} navigation={true} modules={[Navigation]} className="certificateSwiper">
-
-        <SwiperSlide className='!w-auto flex justify-center items-center '>
-         
-          <div className="relative w-120 h-100">
+    <div className="container mx-auto mt-14 lg:mt-48 lg:mb-24 ">  
+      <h1 className="text-3xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
+        My <span className=" text-t-gold">Certificates</span>
+      </h1>
+      
+      {isMobile 
+      ?
+      <Swiper
+        slidesPerView="auto"
+        loop={true}
+        spaceBetween={30}
+        navigation={true}
+        modules={[Navigation]}
+        className="certificateSwiper"
+      >
+        <SwiperSlide >
+          <div>
             <Image
-              src="/images/insiderQa.png"
+              src={InsiderImage}
               alt="Insider Certificate"
-              fill
-              className='object-cover rounded-xl'
-              priority
-              sizes='50vw'
+              className='select-none rounded-lg w-160 h-100'
             />
           </div>
         </SwiperSlide>
 
-        <SwiperSlide className='!w-auto flex justify-center items-center'>
-          <div className="relative w-120 h-100">
+        <SwiperSlide >
+          <div>
             <Image
-              src="/images/techTest.png"
-              alt="Techcareer.net Test Certificate" 
-              fill
-              className='object-cover rounded-xl'
-              priority
-              sizes='50vw'
+              src={TechTestImage}
+              alt="Techcarrer.net Test Certificate"
+              className='select-none rounded-lg w-160 h-100'
             />
           </div>
         </SwiperSlide>
 
-        <SwiperSlide className='!w-auto flex justify-center items-center'>
-          <div className="relative w-120 h-100">
+        <SwiperSlide >
+          <div>
             <Image
-              src="/images/udemySoftwareTest.jpg"
-              alt="Udemy Software Test Certificate"
-              fill
-              className='object-cover rounded-xl'
-              priority
-              sizes='50vw'
+              src={UdemyTestImage}
+              alt="Udemy Test Certificate"
+              className='select-none rounded-lg w-160 h-100'
             />
           </div>
         </SwiperSlide>
 
-        <SwiperSlide className='!w-auto flex justify-center items-center'>
-          <div className="relative w-120 h-100">
+        <SwiperSlide >
+          <div>
             <Image
-              src="/images/udemyPostman.jpg"
+              src={TechSeleniumImage}
+              alt="Techcarrer.net Selenium Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div>
+            <Image
+              src={UdemyPostmanImage}
               alt="Udemy Postman Certificate"
-              fill
-              className='object-cover rounded-xl'
-              sizes='50vw'
+              className='select-none rounded-lg w-160 h-100'
             />
           </div>
         </SwiperSlide>
 
-        <SwiperSlide className='!w-auto flex justify-center items-center'>
-          <div className="relative w-120 h-100">
+        <SwiperSlide >
+          <div>
             <Image
-              src="/images/techApi.png"
-              alt="Techcareer.net API Certificate" 
-              fill
-              className='object-cover rounded-xl'
-              sizes='50vw'
+              src={TechApiImage}
+              alt="Techcarrer.net API Certificate"
+              className='select-none rounded-lg w-160 h-100'
             />
           </div>
         </SwiperSlide>
-
-        <SwiperSlide className='!w-auto flex justify-center items-center'>
-          <div className="relative w-120 h-100">
-            <Image
-              src="/images/techSelenium.png"
-              alt="Techcareer.net Selenium Certificate"
-              fill
-              className='object-cover rounded-xl'
-              sizes='50vw'
-            />
-          </div>
-        </SwiperSlide>
-
+        
       </Swiper>
-    </div>
+
+      :
+      
+      <Swiper
+        slidesPerView="auto"
+        loop={true}
+        spaceBetween={30}
+        navigation={true}
+        modules={[Navigation]}
+        className="certificateSwiper"
+      >
+        <SwiperSlide className='!flex gap-20'>
+          <div>
+            <Image
+              src={InsiderImage}
+              alt="Insider Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+
+          <div>
+            <Image
+              src={TechTestImage}
+              alt="Techcarrer.net Test Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+
+          <div>
+            <Image
+              src={UdemyTestImage}
+              alt="Udemy Test Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+          
+        </SwiperSlide>
+        <SwiperSlide className='!flex gap-20'>
+          <div>
+            <Image
+              src={TechSeleniumImage}
+              alt="Techcarrer.net Selenium Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+
+          <div>
+            <Image
+              src={UdemyPostmanImage}
+              alt="Udemy Postman Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+
+          <div>
+            <Image
+              src={TechApiImage}
+              alt="Techcarrer.net API Certificate"
+              className='select-none rounded-lg w-160 h-100'
+            />
+          </div>
+        </SwiperSlide>
+        
+        
+      </Swiper>
+      }
+  </div>
   )
 }
 

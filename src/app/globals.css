@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-header-title: var(--font-inter);
+  --font-header-text: var(--font-inter);
   --font-topic-title: var(--font-playfair-display);
   --font-text: var(--font-open-sans);
+  --font-detail-text: var(--font-source-sans-3);
 }
 
 @theme {
