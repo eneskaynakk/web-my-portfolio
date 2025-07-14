@@ -99,7 +99,7 @@ const ProjectSlider: React.FC = () => {
 
                   {project.testedFeatures && (
                   <p className="mb-1">
-                    <b className="font-semibold text-t-gold">Tested Features:</b> {project.testedFeatures}
+                    <b className="projectDetail font-semibold text-t-gold">Tested Features:</b> {project.testedFeatures}
                   </p>
                   )}
                   

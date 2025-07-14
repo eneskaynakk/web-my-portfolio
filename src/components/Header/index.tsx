@@ -58,6 +58,7 @@ const Header = () => {
 
                                     <div className='relative flex items-center w-full max-w-[800px]'>
                                         <input className="searchInput w-full rounded-lg border border-gray-300 bg-white py-2 pl-12 pr-4 leading-5 placeholder-gray-500 focus:border-[#d4af37] focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Search" type="text" name='searchBox' id='1'/>
+
                                         <button onClick={() => toResearch(".searchInput")} className="absolute left-3 cursor-pointer text-[#d4af37]">
                                             <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -72,57 +73,65 @@ const Header = () => {
                                 </div>
 
                                 <div className="flex flex-col gap-4 pl-2 pt-10 rounded-lg overflow-y-auto flex-grow">
-                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                    <Link href="/resume" onClick={() => setOpenSearch(false)} className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
                                             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
                                             <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
                                             <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
                                         </svg>
+
                                         Resume
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
                                             <path d="M13 5H19V11"/>
                                             <path d="M19 5L5 19"/>
                                         </svg>
                                     </Link>
 
-                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                    <button onClick={() => {scrollToElement(".project"); setOpenSearch(false);}} className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
                                             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
                                             <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
                                             <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
                                         </svg>
+
                                         Projects
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
                                             <path d="M13 5H19V11"/>
                                             <path d="M19 5L5 19"/>
                                         </svg>
-                                    </Link>
+                                    </button>
 
-                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                    <button onClick={() => {scrollToElement(".certificateSwiper"); setOpenSearch(false);}} className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
                                             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
                                             <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
                                             <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
                                         </svg>
+
                                         Certificates
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
                                             <path d="M13 5H19V11"/>
                                             <path d="M19 5L5 19"/>
                                         </svg>
-                                    </Link>
+                                    </button>
 
-                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                    <button onClick={() => setOpenSearch(false)} className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
                                             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
                                             <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
                                             <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
                                         </svg>
+
                                         Contact
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
                                             <path d="M13 5H19V11"/>
                                             <path d="M19 5L5 19"/>
                                         </svg>
-                                    </Link>
+                                    </button>
                                     
                                     
                                 </div>
@@ -143,7 +152,7 @@ const Header = () => {
                                 </div>
 
                                 <div className="flex flex-col gap-2 p-8 bg-b-light-black/50 backdrop-blur-sm rounded-lg overflow-y-auto flex-grow">
-                                    <Link href="/resume" className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                    <Link href="/resume" onClick={() => setOpenMenu(false)} className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
                                         Resume
 
                                         <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
@@ -167,22 +176,22 @@ const Header = () => {
                                         
 
                                         <div className='flex flex-col gap-4 mt-2 mb-2'>
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Amazon Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Amazon Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Trendyol Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Trendyol Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Instagram Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Instagram Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">X Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">X Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Web Movie Site</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Web Movie Site</button>
 
-                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Personal Portfolio Website</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Personal Portfolio Website</button>
                                         </div>
 
                                     </details>
 
-                                    <button onClick={() => {scrollToElement(".certificateSwiper")}} className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
+                                    <button onClick={() => {scrollToElement(".certificateSwiper"); setOpenMenu(false);}} className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
                                         Certificates
                                         
                                         <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
@@ -191,7 +200,7 @@ const Header = () => {
                                     </button>
                                     <div className="border-b border-t-gold"></div>
 
-                                    <Link href="/" className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
+                                    <Link href="/" onClick={() => setOpenMenu(false)} className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
                                         Contact
 
                                         <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
@@ -201,11 +210,6 @@ const Header = () => {
                                     <div className="border-b border-t-gold"></div>
                                 </div>
 
-                                <div className="border-t border-t-gold pt-4 mt-auto">
-                                    <p className="text-center text-t-white text-lg">
-                                        © 2025 Enes Kaynak. All rights reserved.
-                                    </p>
-                                </div>
                             </div>
                         )}
                     </div>
