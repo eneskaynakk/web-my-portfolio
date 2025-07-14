@@ -23,8 +23,6 @@ function CertificateSlider() {
   const windowWidth = useWindowSize();
   const isMobile = windowWidth !== null && windowWidth < 1024;
 
-  if (windowWidth === null) return null;
-
   return (
     <div className="container mx-auto mt-14 lg:mt-48 lg:mb-24 ">  
       <h1 className="text-3xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">

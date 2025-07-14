@@ -53,8 +53,6 @@ const HeroSection = () => {
 
     const windowWidth = useWindowSize();
     const isMobile = windowWidth !== null && windowWidth < 1024;
-    
-    if (windowWidth === null) return null;
 
     return (
         <section className="relative min-h-154 lg:min-h-screen overflow-hidden flex items-center justify-center">

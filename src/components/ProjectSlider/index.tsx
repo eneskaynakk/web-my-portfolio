@@ -5,9 +5,10 @@ import Image from 'next/image';
 interface Project {
   id: string;
   title: string;
-  description: string;
+  testedFeatures?: string;
   technologies: string;
   testsPerformed?: string;
+  description?: string;
   imageUrl: string;
   link: string;
 }
@@ -16,7 +17,7 @@ const projects: Project[] = [
   {
     id: 'amazon-test-automation',
     title: 'Amazon Test Automation',
-    description: 'Developed automated tests for Amazon, covering product search, filtering, and adding items to the cart. This project ensures robust functionality and a seamless user experience.',
+    testedFeatures: 'Product search, filtering, adding to cart',
     technologies: 'Java, Selenium, Cucumber, TestNG, POM, Allure Report, Commons Email',
     testsPerformed: 'End-to-End, Regression, UI',
     imageUrl: '/images/projectImage.jpg',
@@ -25,7 +26,7 @@ const projects: Project[] = [
   {
     id: 'trendyol-test-automation',
     title: 'Trendyol Test Automation',
-    description: 'Implemented comprehensive test automation for Trendyol, including user login, product search, filtering, and cart management. Focused on delivering high-quality, reliable software.',
+    testedFeatures: 'User login, product search, filtering, adding to cart',
     technologies: 'Java, Selenium, TestNG, POM, Jenkins, TestRail, Commons Email',
     testsPerformed: 'End-to-End, Smoke, Regression, UI',
     imageUrl: '/images/projectImage.jpg',
@@ -34,7 +35,7 @@ const projects: Project[] = [
   {
     id: 'instagram-mobile-test-automation',
     title: 'Instagram Mobile Test Automation',
-    description: 'Designed and executed mobile test automation for Instagram features like user login, messaging, notes, profile search, and profile page interactions. Ensures smooth mobile application performance.',
+    testedFeatures: 'User login, messaging, notes, profile search, profile page',
     technologies: 'Java, Appium, Cucumber, Logger, Jira, Allure Report, Commons Email',
     testsPerformed: 'End-to-End, Smoke, Regression, UI',
     imageUrl: '/images/projectImage.jpg',
@@ -43,7 +44,7 @@ const projects: Project[] = [
   {
     id: 'x-test-automation',
     title: 'X Test Automation',
-    description: 'Created automated tests for the X platform, covering user login, messaging, profile search, and profile page functionalities. Focused on robust and reliable testing.',
+    testedFeatures: 'User login, messaging, profile search, profile page',
     technologies: 'Java, Playwright, Cucumber, Logger, Jira, Allure Report, Commons Email',
     testsPerformed: 'End-to-End, Smoke, Regression, UI',
     imageUrl: '/images/projectImage.jpg',
@@ -52,7 +53,7 @@ const projects: Project[] = [
   {
     id: 'web-movie-site',
     title: 'Web Movie Site',
-    description: 'Developed a feature-rich movie website where users can register, log in, explore detailed information about films and TV shows, create a personalized watchlist, and discover content based on their interests. Built with modern web technologies for a seamless user experience.',
+    description: 'I developed a movie website where users can register, log in, and explore detailed information about films and TV shows. They can create a watchlist and discover content based on their interests.',
     technologies: 'Vue.js, Laravel, MySQL',
     imageUrl: '/images/projectImage.jpg',
     link: 'https://github.com/eneskaynakk/web-movie',
@@ -60,7 +61,7 @@ const projects: Project[] = [
   {
     id: 'web-my-portfolio',
     title: 'Personal Portfolio Website',
-    description: 'Designed and developed a sleek, responsive personal portfolio website to showcase my skills, projects, and professional experience. Features a clean UI and intuitive navigation to highlight my work effectively.',
+    description: 'Designed and developed a sleek, responsive personal portfolio website to showcase my skills, projects, and professional experience.',
     technologies: 'Next.js',
     imageUrl: '/images/projectImage.jpg',
     link: 'https://github.com/eneskaynakk/web-my-portfolio',
@@ -87,22 +88,6 @@ const ProjectSlider: React.FC = () => {
               <div className="relative w-full h-48 lg:h-56">
 
                 <Image src={project.imageUrl} alt={project.title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-
-                <div className="absolute inset-0 h-99 bg-b-light-black/50 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transition-opacity duration-200 ease-in-out text-center">
-                  <div className="text-white">
-                    <h3 className="font-bold text-t-gold text-xl mb-2">{project.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4 line-clamp-4">
-                      {project.description}
-                    </p>
-                    <Link href={project.link} className="inline-flex items-center text-t-white hover:text-t-gold font-semibold transition-colors duration-200">
-                      View Project
-
-                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
               </div>
 
               <div className="p-6 lg:p-7">
@@ -110,15 +95,39 @@ const ProjectSlider: React.FC = () => {
                   {project.title}
                 </h2>
 
-                <div className="mt-4 text-t-white text-sm">
+                <div className="mt-4 text-t-white text-base">
+
+                  {project.testedFeatures && (
                   <p className="mb-1">
-                    <b className="font-semibold text-t-gold">Technologies:</b> {project.technologies}
+                    <b className="font-semibold text-t-gold">Tested Features:</b> {project.testedFeatures}
                   </p>
+                  )}
+                  
+                  <p className="mb-1">
+                    <b className="font-semibold text-t-gold">Technologies Used:</b> {project.technologies}
+                  </p>
+                  
+                  {project.description && (
+                  <p>
+                    <b className="font-semibold text-t-gold">Description:</b> {project.description}
+                  </p>
+                  )}
+
                   {project.testsPerformed && (
                     <p>
-                      <b className="projectDetail font-semibold text-t-gold">Tests Performed:</b> {project.testsPerformed}
+                      <b className="font-semibold text-t-gold">Tests Performed:</b> {project.testsPerformed}
                     </p>
                   )}
+                  <div className='flex'>
+                    <Link href={project.link} className="inline-flex ml-auto mt-6 items-center text-t-white hover:text-t-gold active:text-t-gold font-semibold transition-colors duration-200">
+                        View Project
+
+                        <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </Link>
+                  </div>
+
                 </div>
               </div>
             </div>

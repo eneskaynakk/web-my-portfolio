@@ -30,8 +30,6 @@ const Header = () => {
     const windowWidth = useWindowSize();
     const isMobile = windowWidth !== null && windowWidth < 1024;
     
-    if (windowWidth === null) return null;
-    
     return (
 
         <header className="bg-b-black overflow-x-hidden absolute w-full z-50">
