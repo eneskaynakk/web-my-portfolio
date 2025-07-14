@@ -52,7 +52,7 @@ const HeroSection = () => {
     }, [trainingHours]);
 
     const windowWidth = useWindowSize();
-    const isMobile = windowWidth !== null && windowWidth < 1024;
+    const isMobile = windowWidth !== null && windowWidth < 720;
 
     return (
         <section className="relative min-h-154 lg:min-h-screen overflow-hidden flex items-center justify-center">
@@ -67,7 +67,7 @@ const HeroSection = () => {
                     <div className="flex flex-col gap-8 relative justify-center items-center">
 
                         <div className='flex gap-3'>
-                            <h1 className="font-topic-title text-2xl text-t-white">
+                            <h1 className="font-topic-title text-xl text-t-white">
                                 Hello, My Name Is <span className="font-topic-title text-t-gold">Enes KAYNAK</span>
                             </h1>
                         </div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
                         <div className='flex gap-2 typewriter text-xl font-topic-title text-t-white'>
                             I{"'"}m
                             <Typewriter options={{
-                                strings: ["Software Quality Assurance Engineer.", "QA Tester."],
+                                strings: ["QA Engineer." ,"Software Test Engineer.", "QA Tester."],
                                 loop: true,
                                 autoStart: true,
                                 delay: 100,
@@ -133,7 +133,7 @@ const HeroSection = () => {
                         <div className='flex gap-4 typewriter text-6xl font-topic-title text-t-white'>
                             I{"'"}m
                             <Typewriter options={{
-                                strings: ["Software Quality Assurance Engineer.", "QA Tester."],
+                                strings: ["QA Engineer." ,"Software Test Engineer.", "QA Tester."],
                                 loop: true,
                                 autoStart: true,
                                 delay: 100,

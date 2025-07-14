@@ -21,7 +21,7 @@ import './certificateSlider.css';
 function CertificateSlider() {
 
   const windowWidth = useWindowSize();
-  const isMobile = windowWidth !== null && windowWidth < 1024;
+  const isMobile = windowWidth !== null && windowWidth < 720;
 
   return (
     <div className="container mx-auto mt-14 lg:mt-48 lg:mb-24 ">  

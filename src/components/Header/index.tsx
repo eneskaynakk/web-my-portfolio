@@ -4,19 +4,21 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-import { useWindowSize } from '@/hooks/useWindowSize'; 
+import Hamburger from 'hamburger-react';
 
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 const Header = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenMenu, setOpenMenu] = useState(false);
 
+    const [isOpenSearch, setOpenSearch] = useState(false);
+    
     const pathname = usePathname();
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
+    const windowWidth = useWindowSize();
+    const isMobile = windowWidth !== null && windowWidth < 720;
+    
     const scrollToElement = (elementClass: string) =>{
         const element = document.querySelector(elementClass) as HTMLElement;
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -26,94 +28,186 @@ const Header = () => {
         const element = document.querySelector(elementClass) as HTMLElement;
         element.focus();
     }
-
-    const windowWidth = useWindowSize();
-    const isMobile = windowWidth !== null && windowWidth < 1024;
     
     return (
 
         <header className="bg-b-black overflow-x-hidden absolute w-full z-50">
             <nav className="fixed w-full z-50 bg-gradient-to-b from-b-black/90 to-transparent backdrop-blur-md">
-                <div className='px-4 py-4 lg:px-0 lg:py-0 lg:container lg:mx-auto'>
+                <div className='px-8 py-4 lg:px-0 lg:py-0 lg:container lg:mx-auto'>
                     
                     {isMobile 
                     ?
                     <div className="flex justify-between items-center">
-                        
                         <Link href="/">
                             <Image src="/images/siteIcon.png" alt="Site Icon" width={100} height={100} priority/>
                         </Link>
 
-                         <div className='relative flex items-center'>
-                            <input className="searchInputMobile w-full rounded-full border border-gray-300 bg-white py-3 pl-12 pr-4 leading-5 placeholder-gray-500 focus:border-[#d4af37] focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Search" type="text" name='searchBox' id='1'/>
-                            <button onClick={() => toResearch(".searchInputMobile")} className="absolute left-3 cursor-pointer text-[#d4af37]">
-                                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                        <div className='flex justify-between gap-2 items-center'>
+                            <button onClick={() => setOpenSearch(true)} className="cursor-pointer text-[#f5f5f5]">
+                                <svg className="h-5 w-5 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </button>
+
+                            <Hamburger size={20} color='#d4af37' toggled={isOpenMenu} toggle={setOpenMenu}/>
                         </div>
 
-                        <div className={`fixed inset-0 z-40 bg-black transition-opacity duration-300 ease-in-out ${ isOpen ? "opacity-75" : "opacity-0 pointer-events-none" }`} onClick={toggleMenu}>
-                        </div>
+                        {isOpenSearch && (
+                            <div className="fixed top-0 left-0 h-68 rounded-b-lg w-screen p-4 bg-black flex flex-col">
+                                <div className='flex justify-between items-center gap-4'>
 
-                        <div className={`fixed top-0 right-0 z-50 pt-32 pl-8 flex h-screen w-full flex-col bg-gradient-to-b from-b-black to-b-light-black text-2xl transition-transform duration-300 ease-in-out ${ isOpen ? "translate-x-0" : "translate-x-full" }`}>
-                            <div className="flex flex-col gap-2">
-                                
-                                <Link href="/resume" onClick= {toggleMenu} className="text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out">
-                                    Resume
-                                </Link> 
-                                
-                                <details className="group">
+                                    <div className='relative flex items-center w-full max-w-[800px]'>
+                                        <input className="searchInput w-full rounded-lg border border-gray-300 bg-white py-2 pl-12 pr-4 leading-5 placeholder-gray-500 focus:border-[#d4af37] focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Search" type="text" name='searchBox' id='1'/>
+                                        <button onClick={() => toResearch(".searchInput")} className="absolute left-3 cursor-pointer text-[#d4af37]">
+                                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
 
-                                    <summary className="flex items-center py-3 group-open:bg-t-gold transform duration-300 ease-in-out">
-                                        <span className='text-t-white font-text text-xl'>Projects</span>
-                                        <span className="transition rotate-270 group-open:rotate-360">
-                                                <svg fill="none" height="24" width="24" shapeRendering="geometricPrecision" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" >
+                                    <button onClick={() => setOpenSearch(false)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                    </button>
+
+                                </div>
+
+                                <div className="flex flex-col gap-4 pl-2 pt-10 rounded-lg overflow-y-auto flex-grow">
+                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                                            <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                                        </svg>
+                                        Resume
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
+                                            <path d="M13 5H19V11"/>
+                                            <path d="M19 5L5 19"/>
+                                        </svg>
+                                    </Link>
+
+                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                                            <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                                        </svg>
+                                        Projects
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
+                                            <path d="M13 5H19V11"/>
+                                            <path d="M19 5L5 19"/>
+                                        </svg>
+                                    </Link>
+
+                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                                            <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                                        </svg>
+                                        Certificates
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
+                                            <path d="M13 5H19V11"/>
+                                            <path d="M19 5L5 19"/>
+                                        </svg>
+                                    </Link>
+
+                                    <Link href="/resume" className="flex gap-2 items-center text-t-white font-text text-lg focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text-icon lucide-file-text">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                                            <path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                                        </svg>
+                                        Contact
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-up-right-icon lucide-move-up-right">
+                                            <path d="M13 5H19V11"/>
+                                            <path d="M19 5L5 19"/>
+                                        </svg>
+                                    </Link>
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                        )}
+
+                        
+
+                        {isOpenMenu && (
+                            <div className="fixed top-0 left-0 h-screen w-screen p-4 bg-black flex flex-col">
+                            
+                                <div className='flex justify-between mb-4'>
+                                    <Link href="/">
+                                        <Image src="/images/siteIcon.png" alt="Site Icon" width={100} height={100} priority/>
+                                    </Link>
+                                    <Hamburger size={20} color='#d4af37' toggled={isOpenMenu} toggle={setOpenMenu}/>
+                                </div>
+
+                                <div className="flex flex-col gap-2 p-8 bg-b-light-black/50 backdrop-blur-sm rounded-lg overflow-y-auto flex-grow">
+                                    <Link href="/resume" className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out rounded-lg">
+                                        Resume
+
+                                        <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </Link>
+                                    <div className="border-b border-t-gold"></div>
+                                    
+                                    <details className="group border-b border-t-gold">
+                                        <summary className="flex items-center justify-between py-3 group-open:bg-t-gold rounded-lg transform duration-300 ease-in-out">
+                                            <span className='text-t-white font-text text-xl'>
+                                                Projects
+                                            </span>
+                                            
+                                            <span className="transition rotate-270 group-open:rotate-360">
+                                                <svg fill="none" height="24" width="24" className='group-open:stroke-t-white' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
                                                     <path d="M6 9l6 6 6-6"></path>
                                                 </svg>
-                                        </span>
-                                    </summary>
+                                            </span>
+                                        </summary>
+                                        
 
-                                    <div className='flex flex-col gap-4 mt-2 mb-2'>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">Amazon Test Automation</button>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">Trendyol Test Automation</button>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">Instagram Test Automation</button>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">X Test Automation</button>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">Web Movie Site</button>
-                                        <button onClick={() => {scrollToElement(".project"); toggleMenu();}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left">Personal Portfolio Website</button>
-                                    </div>
-                                    
-                                </details>
+                                        <div className='flex flex-col gap-4 mt-2 mb-2'>
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Amazon Test Automation</button>
 
-                                <button onClick={() => {scrollToElement(".certificateSwiper"); toggleMenu();}} className="text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left" >
-                                    Certificates
-                                </button>
-                            
-                                <Link href="/" className="text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left" onClick={toggleMenu}>
-                                    Contact
-                                </Link>
-                            
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Trendyol Test Automation</button>
+
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Instagram Test Automation</button>
+
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">X Test Automation</button>
+
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Web Movie Site</button>
+
+                                            <button onClick={() => {scrollToElement(".project")}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Personal Portfolio Website</button>
+                                        </div>
+
+                                    </details>
+
+                                    <button onClick={() => {scrollToElement(".certificateSwiper")}} className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
+                                        Certificates
+                                        
+                                        <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </button>
+                                    <div className="border-b border-t-gold"></div>
+
+                                    <Link href="/" className="flex justify-between items-center text-t-white font-text text-xl py-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">
+                                        Contact
+
+                                        <svg fill="none" height="24" width="24" className='rotate-270' shapeRendering="geometricPrecision" stroke="#d4af37" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </Link>
+                                    <div className="border-b border-t-gold"></div>
+                                </div>
+
+                                <div className="border-t border-t-gold pt-4 mt-auto">
+                                    <p className="text-center text-t-white text-lg">
+                                        © 2025 Enes Kaynak. All rights reserved.
+                                    </p>
+                                </div>
                             </div>
-                            <div className="absolute w-full right-0 bottom-0 border-t border-t-white pt-8 pb-8 flex flex-col">
-                                <p className="text-center text-t-white text-lg mb-4">
-                                    © 2025 Enes Kaynak. All rights reserved.
-                                </p>
-                            </div>
-                        </div>
-
-                        <nav className="rounded-lg px-2 bg-t-gold flex justify-end">
-                            <div className="relative h-8 w-6 cursor-pointer z-50" onClick={toggleMenu}>
-                                
-                                <span className={`absolute left-1/2 h-1 w-full -translate-x-1/2 rounded-full bg-t-white transition-all duration-300 ease-in-out ${ isOpen? "top-1/2 -translate-y-1/2 rotate-45 !bg-white" : "top-1/4 -translate-y-1/2"}`}>
-                                </span>
-
-                                <span className={`absolute left-1/2 top-1/2 h-1 w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-t-white transition-all duration-300 ease-in-out ${ isOpen? "opacity-0" : "" }`}>
-                                </span>
-
-                                <span className={`absolute left-1/2 h-1 w-full -translate-x-1/2 rounded-full bg-t-white transition-all duration-300 ease-in-out ${ isOpen? "top-1/2 -translate-y-1/2 -rotate-45 !bg-white" : "top-3/4 -translate-y-1/2" }`}>
-                                </span>
-                            </div>
-                        </nav>
+                        )}
                     </div>
 
                     :
