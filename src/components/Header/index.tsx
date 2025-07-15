@@ -30,7 +30,7 @@ const Header = () => {
     }
     
     return (
-
+        
         <header className="bg-b-black overflow-x-hidden absolute w-full z-50">
             <nav className="fixed w-full z-50 bg-gradient-to-b from-b-black/90 to-transparent backdrop-blur-md">
                 <div className='px-8 py-4 lg:px-0 lg:py-0 lg:container lg:mx-auto'>
@@ -145,7 +145,7 @@ const Header = () => {
                             <div className="fixed top-0 left-0 h-screen w-screen p-4 bg-black flex flex-col">
                             
                                 <div className='flex justify-between mb-4'>
-                                    <Link href="/">
+                                    <Link href="/" onClick={() => setOpenMenu(false)}>
                                         <Image src="/images/siteIcon.png" alt="Site Icon" width={100} height={100} priority/>
                                     </Link>
                                     <Hamburger size={20} color='#d4af37' toggled={isOpenMenu} toggle={setOpenMenu}/>
@@ -176,17 +176,17 @@ const Header = () => {
                                         
 
                                         <div className='flex flex-col gap-4 mt-2 mb-2'>
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Amazon Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Amazon Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Trendyol Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Trendyol Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Instagram Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Instagram Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">X Test Automation</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">X Test Automation</button>
 
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Web Movie Site</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Web Movie Site</button>
 
-                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-3 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Personal Portfolio Website</button>
+                                            <button onClick={() => {scrollToElement(".projectDetail"); setOpenMenu(false);}} className="w-full font-text text-t-white text-lg py-2 pl-6 focus:bg-t-gold transition-colors duration-200 ease-in-out text-left rounded-lg">Personal Portfolio Website</button>
                                         </div>
 
                                     </details>

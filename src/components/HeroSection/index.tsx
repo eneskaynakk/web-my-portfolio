@@ -95,20 +95,23 @@ const HeroSection = () => {
                             
                         </div>
 
-                        <div className="flex justify-center items-center text-center gap-4">
-                            <div className="flex flex-col gap-1">
+                        <div className="flex justify-center items-center gap-12">
+                            <div className="flex flex-col items-center text-center gap-1 flex-1">
                                 <p className="text-2xl text-t-gold font-text">{certificateCount}+</p>
-                                <p className="text-base text-t-white font-text">Certificate Received</p>
+                                <p className="text-base text-t-white font-text">Certificate</p>
+                                <p className="text-base text-t-white font-text">Received</p>
                             </div>
 
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col items-center text-center gap-1 flex-1">
                                 <p className="text-2xl text-t-gold font-text">{projectCount}+</p>
-                                <p className="text-base text-t-white font-text">Projects Completed</p>
+                                <p className="text-base text-t-white font-text">Projects</p>
+                                <p className="text-base text-t-white font-text">Completed</p>
                             </div>
 
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col items-center text-center gap-1 flex-1">
                                 <p className="text-2xl text-t-gold font-text">{trainingHours}+</p>
-                                <p className="text-base text-t-white font-text">Training Hours</p>
+                                <p className="text-base text-t-white font-text">Training</p>
+                                <p className="text-base text-t-white font-text">Hour</p>
                                 
                             </div>
                         </div>

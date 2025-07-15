@@ -25,7 +25,7 @@ function CertificateSlider() {
 
   return (
     <div className="container mx-auto mt-14 lg:mt-48 lg:mb-24 ">  
-      <h1 className="text-3xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
+      <h1 className="text-2xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
         My <span className=" text-t-gold">Certificates</span>
       </h1>
       

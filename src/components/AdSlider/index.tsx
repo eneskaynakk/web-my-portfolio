@@ -15,7 +15,7 @@ const AdSlider = ({ children }: { children: React.ReactElement}) => {
       <div className=' px-4 lg:px-0 lg:py-0 mt-10 container mx-auto lg:mt-48'>
 
         <div>
-          <h1 className="text-3xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
+          <h1 className="text-2xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
           Technologies In<span className=" text-t-gold"> Projects</span>
           </h1>
         </div>

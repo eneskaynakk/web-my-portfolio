@@ -77,8 +77,8 @@ const ProjectSlider: React.FC = () => {
         <Image src="/images/mountain.jpg" alt= "Mountain Image" fill className='object-cover select-none' priority sizes='100vw'/>
       </div>
 
-      <div className="relative z-20 container mx-auto px-4 mt-10 lg:px-6 lg:px-8 lg:mt-48">
-        <h1 className="project text-4xl lg:text-5xl lg:text-6xl font-extrabold text-t-white text-center mb-10 lg:mb-20 tracking-tight leading-tight">
+      <div className="relative z-20 container mx-auto px-4 mt-10 lg:px-0 lg:mt-48">
+        <h1 className="project text-2xl lg:text-5xl lg:text-6xl font-extrabold text-t-white text-center mb-10 lg:mb-20 tracking-tight leading-tight">
           My <span className=" text-t-gold">Projects</span>
         </h1>
 
