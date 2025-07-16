@@ -16,7 +16,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-black relative">
-            <div className="relative container mx-auto pt-16 pb-16">
+            <div className="relative container mx-auto pb-16">
                 <div className='lg:flex lg:justify-between px-4 lg:px-0'>
                     {isMobile ? (
                         <>
@@ -59,17 +59,17 @@ const Footer = () => {
                                             </button>
                                         </li>
                                         <li>
-                                            <Link href="/about" className="text-gray-300 active:text-t-gold inline-block cursor-pointer">
+                                            <Link href="/resume" className="text-gray-300 active:text-t-gold inline-block">
                                                 Resume
                                             </Link>
                                         </li>
                                         <li>
-                                            <button onClick={() => scrollToElement(".certificates")} className="text-gray-300 active:text-t-gold inline-block cursor-pointer">
+                                            <button onClick={() => scrollToElement(".certificate")} className="text-gray-300 active:text-t-gold inline-block cursor-pointer">
                                                 Certificates
                                             </button>
                                         </li>
                                         <li>
-                                            <button className="text-gray-300 active:text-t-gold inline-block cursor-pointer">
+                                            <button onClick={() => scrollToElement(".contact")} className="text-gray-300 active:text-t-gold inline-block">
                                                 Contact
                                             </button>
                                         </li>
@@ -80,64 +80,63 @@ const Footer = () => {
                                     <h3 className="text-lg font-semibold mb-4 text-t-gold">Get In Touch</h3>
                                     <ul className="space-y-3">
                                         <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            <Link href="/" className="text-gray-300 active:text-t-gold inline-block">
                                                 Start a Project
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            <Link href="/" className="text-gray-300 active:text-t-gold inline-block">
                                                 Join the Team
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            <Link href="/" className="text-gray-300 active:text-t-gold inline-block">
                                                 Press & Media
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            <Link href="/" className="text-gray-300 active:text-t-gold inline-block">
                                                 Best Design
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            <Link href="/" className="text-gray-300 active:text-t-gold inline-block">
                                                 Best Service
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
 
-
-                                <div className='flex flex-col'>
-                                    <h3 className="text-lg font-semibold mb-4 text-t-gold">Support</h3>
-                                    <ul className="space-y-3">
-                                        <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                                                Help Center
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                                                Documentation
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                                                Privacy Policy
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                                                Terms of Service
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                                                Cookie Policy
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                             <div className='flex flex-col pt-10'>
+                                <h3 className="text-lg font-semibold mb-4 text-t-gold">Support</h3>
+                                <ul className="space-y-3">
+                                    <li>
+                                        <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            Help Center
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            Documentation
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            Privacy Policy
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            Terms of Service
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                            Cookie Policy
+                                        </Link>
+                                    </li>
+                                </ul>
                             </div>
                         </>
                     ) : (
@@ -182,17 +181,17 @@ const Footer = () => {
                                         </button>
                                     </li>
                                     <li>
-                                        <Link href="/about" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
+                                        <Link href="/resume" className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block">
                                             Resume
                                         </Link>
                                     </li>
                                     <li>
-                                        <button onClick={() => scrollToElement(".certificates")} className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block cursor-pointer">
+                                        <button onClick={() => scrollToElement(".certificate")} className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block cursor-pointer">
                                             Certificates
                                         </button>
                                     </li>
                                     <li>
-                                        <button className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block cursor-pointer">
+                                        <button onClick={() => scrollToElement(".contact")} className="text-gray-300 hover:text-t-gold transition-colors duration-200 hover:translate-x-1 transform inline-block cursor-pointer">
                                             Contact
                                         </button>
                                     </li>
@@ -267,7 +266,7 @@ const Footer = () => {
 
             <div className="container mx-auto border-t border-t-gold pt-8 pb-8 flex flex-col md:flex-row items-center justify-between">
                 <p className="text-t-white text-sm mb-4 md:mb-0">
-                    © 2025 Your Company Name. All rights reserved.
+                    © 2025 E.K. All rights reserved.
                 </p>
                 <div className="flex items-center space-x-6">
                     <span className='text-sm text-t-white'>Made with</span>

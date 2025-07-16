@@ -70,24 +70,34 @@ const projects: Project[] = [
 
 const ProjectSlider: React.FC = () => {
   return (
-    <section className="relative overflow-hidden min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 ">
+    <section className="relative overflow-hidden min-h-screen ">
 
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-b-black/70 via-b-black/60 to-b-black/90 z-10"></div>
-        <Image src="/images/mountain.jpg" alt= "Mountain Image" fill className='object-cover select-none' priority sizes='100vw'/>
+        <Image src="/images/seaImage.png" alt= "Sea Image" fill className='object-cover select-none' priority sizes='100vw'/>
       </div>
 
-      <div className="relative z-20 container mx-auto px-4 mt-10 lg:px-0 lg:mt-48">
-        <h1 className="project text-2xl lg:text-5xl lg:text-6xl font-extrabold text-t-white text-center mb-10 lg:mb-20 tracking-tight leading-tight">
-          My <span className=" text-t-gold">Projects</span>
-        </h1>
+      <div className="relative z-20 container mx-auto px-4 mt-10 lg:px-0 lg:mt-24">
+        <div className="flex items-center justify-center gap-2">
+
+          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-git-fork-icon lucide-git-fork w-6 h-6 lg:w-10 lg:h-10">
+            <circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/>
+            <circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/>
+            <path d="M12 12v3"/>
+          </svg>
+
+          <h1 className="text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
+            My <span className=" text-t-gold">Projects</span>
+          </h1>
+        </div>
+        <div className="mx-auto border-b-4 sm:border-b-8 border-t-gold w-45 lg:w-68 mb-10 lg:mb-16 mt-1"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
           {projects.map((project) => (
             <div key={project.id} className="group relative bg-b-light-black/50 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden ">
               <div className="relative w-full h-48 lg:h-56">
 
-                <Image src={project.imageUrl} alt={project.title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+                <Image src={project.imageUrl} alt={project.title} fill className="project object-cover object-center group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority/>
               </div>
 
               <div className="p-6 lg:p-7">

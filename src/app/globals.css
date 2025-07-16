@@ -14,3 +14,15 @@
   --color-t-gold: oklch(0.7665 0.1387 91.06);
   --color-t-white: oklch(0.9702 0 0);
 }
+
+/* globals.css */
+body {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

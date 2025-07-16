@@ -12,13 +12,18 @@ import 'swiper/css/navigation';
 const AdSlider = ({ children }: { children: React.ReactElement}) => {
   return (
     <div className="relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-b-black to-b-light-black">
-      <div className=' px-4 lg:px-0 lg:py-0 mt-10 container mx-auto lg:mt-48'>
+      <div className=' px-4 lg:px-0 mt-10 container mx-auto lg:mt-24'>
 
-        <div>
-          <h1 className="text-2xl lg:text-6xl font-extrabold text-t-white text-center mb-10 tracking-tight leading-tight">
-          Technologies In<span className=" text-t-gold"> Projects</span>
+        <div className="flex items-center justify-center gap-2">
+
+          <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="#d4af37"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-automation w-6 h-6 lg:w-10 lg:h-10"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20.693c-.905 .628 -2.36 .292 -2.675 -1.01a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.492 .362 1.716 2.219 .674 3.03" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17 22l5 -3l-5 -3z" />
+          </svg>
+
+          <h1 className="text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
+            Technologies In <span className=" text-t-gold">Projects</span>
           </h1>
         </div>
+        <div className="mx-auto border-b-4 sm:border-b-8 border-t-gold w-80 lg:w-120 mb-10 lg:mb-16 mt-1"></div>
 
         <Swiper
           slidesPerView="auto"

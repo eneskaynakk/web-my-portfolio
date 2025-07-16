@@ -1,4 +1,4 @@
-import { HeroSection, AdSlider, CertificateSlider, ProjectSlider } from '@/components';
+import { HeroSection, AdSlider, CertificateSlider, ProjectSlider, ContactCard } from '@/components';
 
 export default function Home() {
 
@@ -11,6 +11,8 @@ export default function Home() {
           </AdSlider>
 
           <ProjectSlider/>
+          
+          <ContactCard/>
       </main>
     );
 }

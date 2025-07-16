@@ -40,11 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${interFont.variable} ${playfairFont.variable} ${openFont.variable} ${sourceFont.variable}`}>
+      
       <body>
         <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
+
     </html>
   );
 }
