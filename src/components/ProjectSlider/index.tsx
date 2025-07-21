@@ -59,7 +59,7 @@ const projects: Project[] = [
     link: 'https://github.com/eneskaynakk/web-movie',
   },
   {
-    id: 'web-my-portfolio',
+    id: 'personal-portfolio-website',
     title: 'Personal Portfolio Website',
     description: 'Designed and developed a sleek, responsive personal portfolio website to showcase my skills, projects, and professional experience.',
     technologies: 'Next.js',
@@ -70,7 +70,7 @@ const projects: Project[] = [
 
 const ProjectSlider: React.FC = () => {
   return (
-    <section className="relative overflow-hidden min-h-screen ">
+    <section id='project' className="relative overflow-hidden min-h-screen ">
 
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-b-black/70 via-b-black/60 to-b-black/90 z-10"></div>
@@ -97,7 +97,7 @@ const ProjectSlider: React.FC = () => {
             <div key={project.id} className="group relative bg-b-light-black/50 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl overflow-hidden ">
               <div className="relative w-full h-48 lg:h-56">
 
-                <Image src={project.imageUrl} alt={project.title} fill className="project object-cover object-center group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority/>
+                <Image src={project.imageUrl} alt={project.title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" id ={project.id} priority/>
               </div>
 
               <div className="p-6 lg:p-7">
@@ -109,7 +109,7 @@ const ProjectSlider: React.FC = () => {
 
                   {project.testedFeatures && (
                   <p className="mb-1">
-                    <b className="projectDetail font-semibold text-t-gold">Tested Features:</b> {project.testedFeatures}
+                    <b className=" font-semibold text-t-gold">Tested Features:</b> {project.testedFeatures}
                   </p>
                   )}
                   
@@ -129,7 +129,7 @@ const ProjectSlider: React.FC = () => {
                     </p>
                   )}
                   <div className='flex'>
-                    <Link href={project.link} className="inline-flex ml-auto mt-6 items-center text-t-white hover:text-t-gold active:text-t-gold font-semibold transition-colors duration-200">
+                    <Link href={project.link} target="_blank" className="inline-flex ml-auto mt-6 items-center text-t-white hover:text-t-gold active:text-t-gold font-semibold transition-colors duration-200">
                         View Project
 
                         <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

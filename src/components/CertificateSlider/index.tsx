@@ -38,7 +38,7 @@ function CertificateSlider() {
           <path d="M6 15l2 0" />
         </svg>
 
-        <h1 className="certificate text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
+        <h1 id="certificate" className="text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
           My <span className=" text-t-gold">Certificates</span>
         </h1>
       </div>

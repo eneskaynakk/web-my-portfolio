@@ -59,7 +59,7 @@ const HeroSection = () => {
            {isMobile
            ?
            <div>
-            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-b from-b-black/70 via-b-black/60 to-b-black/90 z-10"></div>
                     <Image src="/images/macImage.jpg" alt= "Main Image" fill className='object-cover select-none' priority sizes='100vw'/>
                 </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
                         </div>
 
                         <div className="flex gap-2">
-                            <Link href="/" className="bg-t-gold text-white px-6 py-2 rounded-md relative overflow-hidden group">
+                            <Link href="/resume" className="bg-t-gold text-white px-6 py-2 rounded-md relative overflow-hidden group">
                                 <span className="relative z-10 text-base font-text text-t-white">Hire Me</span>
                             </Link>
 
@@ -118,7 +118,9 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+            
             :
+
             <div>
                 <div className="absolute inset-0 z-0 ">
                     <div className="absolute inset-0 bg-gradient-to-b from-b-black/70 via-b-black/60 to-b-black/90 z-10"></div>
@@ -145,11 +147,11 @@ const HeroSection = () => {
                         </div>
 
                         <div className="flex gap-2">
-                            <Link href="/" className="bg-t-gold text-white px-6 py-2 rounded-md relative overflow-hidden group">
+                            <Link href="/resume" className="bg-t-gold text-white px-6 py-2 rounded-md relative overflow-hidden group">
                                 <span className="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"></span>
                                 <span className="relative z-10 font-text text-t-white">Hire Me</span>
                             </Link>
-                            <Link href="https://github.com/eneskaynakk" className="relative text-t-white px-6 py-2 rounded-md overflow-hidden group">
+                            <Link href="https://github.com/eneskaynakk" target="_blank" className="relative text-t-white px-6 py-2 rounded-md overflow-hidden group">
                                 <div className="absolute inset-0 bg-t-gold transform -translate-x-full group-hover:translate-x-0 transition duration-300"></div>
                                 <span className="relative z-10 font-medium font-text group-hover:text-t-white">Latest Projects</span>
                             </Link>

@@ -13,7 +13,7 @@ function ContactCard() {
               fill="#d4af37"></path>
           </svg>
 
-          <h1 className="contact text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
+          <h1 id="contact" className="text-2xl lg:text-4xl font-extrabold text-t-white text-center tracking-tight leading-tight">
             Get In <span className=" text-t-gold">Touch</span>
           </h1>
         </div>
@@ -81,7 +81,7 @@ function ContactCard() {
             </svg>
           </div>
           <p className="text-lg font-text text-t-gold">Linkedin</p>
-          <Link href="https://www.linkedin.com/in/enes-kaynak/" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold">
+          <Link href="https://www.linkedin.com/in/enes-kaynak/" target="_blank" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold">
             Go To LinkedIn Profile
 
             <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ function ContactCard() {
             </svg>
           </div>
           <p className="text-lg font-text text-t-gold">Github</p>
-          <Link href="https://github.com/eneskaynakk" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold ">
+          <Link href="https://github.com/eneskaynakk" target="_blank" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold ">
             Go To Github Profile
 
             <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
