@@ -8,7 +8,7 @@ import { useWindowSize } from '@/hooks/useWindowSize';
 const Footer = () => {
     
     const windowWidth = useWindowSize();
-    const isMobile = windowWidth !== null && windowWidth < 720;
+    const isMobile = windowWidth !== null && windowWidth < 1024;
 
     const router = useRouter();
 

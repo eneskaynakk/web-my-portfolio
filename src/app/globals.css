@@ -15,7 +15,6 @@
   --color-t-white: oklch(0.9702 0 0);
 }
 
-/* globals.css */
 body {
   opacity: 0;
   animation: fadeIn 0.4s ease-in forwards;

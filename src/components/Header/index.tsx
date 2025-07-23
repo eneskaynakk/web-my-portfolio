@@ -33,7 +33,7 @@ const Header = () => {
     const router = useRouter();
 
     const windowWidth = useWindowSize();
-    const isMobile = windowWidth !== null && windowWidth < 720;
+    const isMobile = windowWidth !== null && windowWidth < 1024;
     
     const scrollToElement = (elementId: string) =>{
         router.push('/#' + elementId );
@@ -56,10 +56,8 @@ const Header = () => {
                         <Link href="/">
                             <Image src="/images/siteIcon.png" alt="Site Icon" width={100} height={100} priority/>
                         </Link>
-
                         
                         <Hamburger size={20} color='#d4af37' toggled={isOpenMenu} toggle={setOpenMenu}/>
-                        
 
                         {isOpenMenu && (
                             <div className="fixed top-0 left-0 h-screen w-screen p-4 bg-black flex flex-col">
@@ -190,31 +188,31 @@ const Header = () => {
                                 </button>
                             </div>
 
-                            <div className="flex invisible absolute -left-[100px] z-50 rounded-md shadow-xl group-hover:visible ">
+                            <div className="flex invisible absolute -left-[100px] z-50 bg-white rounded-md shadow-xl group-hover:visible ">
                                 <div className="flex flex-col text-center">
-                                    <button onClick={() => scrollToElement("amazon-test-automation")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("amazon-test-automation")} className="text-t-gold hover:bg-t-gold hover:text-t-white hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         Amazon Test Automation
                                     </button>
 
-                                    <button onClick={() => scrollToElement("trendyol-test-automation")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("trendyol-test-automation")} className="text-t-gold hover:bg-t-gold hover:text-t-white hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         Trendyol Test Automation
                                     </button>
 
-                                    <button onClick={() => scrollToElement("web-movie-site")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("web-movie-site")} className="text-t-gold hover:bg-t-gold hover:text-t-white hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         Web Movie Site
                                     </button>
                                 </div>
 
                                 <div className="flex flex-col text-center">
-                                    <button onClick={() => scrollToElement("instagram-mobile-test-automation")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("instagram-mobile-test-automation")} className="text-t-gold hover:bg-t-gold hover:text-t-white font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         Instagram Mobile Test Automation
                                     </button>
 
-                                    <button onClick={() => scrollToElement("x-test-automation")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("x-test-automation")} className="text-t-gold hover:bg-t-gold hover:text-t-white font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         X Test Automation
                                     </button>
 
-                                    <button onClick={() => scrollToElement("personal-portfolio-website")} className="text-t-white hover:text-t-gold hover:bg-dark-gray font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
+                                    <button onClick={() => scrollToElement("personal-portfolio-website")} className="text-t-gold hover:bg-t-gold hover:text-t-white font-header-text transition-colors duration-300 text-sm tracking-widest m-2 p-2 rounded-md w-40 cursor-pointer">
                                         Personal Portfolio Website
                                     </button>
                                 </div>
@@ -227,7 +225,7 @@ const Header = () => {
                             </button>
                         </div>
 
-                        <div className='relative flex items-center w-full max-w-[800px]'>
+                        <div className='relative flex items-center w-full lg:max-w-[400px] 2xl:max-w-[800px]'>
                             <input className="searchInput w-full rounded-lg border border-gray-300 bg-white py-2 pl-12 pr-4 leading-5 placeholder-gray-500 focus:border-[#d4af37] focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#d4af37] sm:text-md" placeholder="Search" type="text" name='searchBox' id='1' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
 
                             <button onClick={() => toResearch(".searchInput")} className="absolute left-3 cursor-pointer text-[#d4af37]">

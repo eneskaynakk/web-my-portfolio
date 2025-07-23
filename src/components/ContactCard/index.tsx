@@ -20,7 +20,7 @@ function ContactCard() {
         <div className="mx-auto border-b-4 sm:border-b-8 border-t-gold w-48 lg:w-72 mb-10 lg:mb-16"></div>
       </div>
 
-      <div className="flex flex-col gap-4 px-4 lg:px-0 lg:flex-row lg:container lg:mx-auto lg:justify-between items-center mb-32">
+      <div className="flex flex-col gap-4 px-4 lg:px-0 lg:flex-row lg:container lg:mx-auto lg:justify-between items-center text-center mb-32">
         <div className="flex flex-col items-center w-72 gap-3 px-8 py-8 bg-b-light-black/50 backdrop-blur-sm rounded-3xl shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-4 hover:shadow-2xl">
           <div>
               <svg xmlns="http://www.w3.org/2000/svg" className="lucide lucide-phone-icon lucide-phone w-10 h-10 lg:w-12 lg:h-12" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
@@ -60,7 +60,11 @@ function ContactCard() {
             </svg>
           </div>
           <p className="text-lg font-text text-t-gold">Email</p>
-          <p className="text-lg font-text text-t-white">kaynk.enes@gmail.com</p>
+          <div className="flex lg:flex-col xl:flex-row ">
+            <p className="text-lg font-text text-t-white">kaynk.enes</p>
+            <p className="text-lg font-text text-t-white">@gmail.com</p>
+          </div>
+          
         </div>
 
         <div className="flex flex-col items-center w-72 gap-3 px-8 py-8 bg-b-light-black/50 backdrop-blur-sm rounded-3xl shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-4 hover:shadow-2xl">
@@ -82,7 +86,7 @@ function ContactCard() {
           </div>
           <p className="text-lg font-text text-t-gold">Linkedin</p>
           <Link href="https://www.linkedin.com/in/enes-kaynak/" target="_blank" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold">
-            Go To LinkedIn Profile
+            Linkedin Profile
 
             <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -100,7 +104,7 @@ function ContactCard() {
           </div>
           <p className="text-lg font-text text-t-gold">Github</p>
           <Link href="https://github.com/eneskaynakk" target="_blank" className="flex items-center text-lg font-text text-t-white hover:text-t-gold active:text-t-gold ">
-            Go To Github Profile
+            Github Profile
 
             <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

@@ -21,7 +21,7 @@ import './certificateSlider.css';
 function CertificateSlider() {
 
   const windowWidth = useWindowSize();
-  const isMobile = windowWidth !== null && windowWidth < 720;
+  const isMobile = windowWidth !== null && windowWidth < 1024;
 
   return (
     <div className="lg:container lg:mx-auto mt-14 lg:mt-24 lg:mb-24 ">
@@ -59,7 +59,7 @@ function CertificateSlider() {
             <Image
               src={InsiderImage}
               alt="Insider Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -69,7 +69,7 @@ function CertificateSlider() {
             <Image
               src={TechTestImage}
               alt="Techcarrer.net Test Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -79,7 +79,7 @@ function CertificateSlider() {
             <Image
               src={UdemyTestImage}
               alt="Udemy Test Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -89,7 +89,7 @@ function CertificateSlider() {
             <Image
               src={TechSeleniumImage}
               alt="Techcarrer.net Selenium Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -99,7 +99,7 @@ function CertificateSlider() {
             <Image
               src={UdemyPostmanImage}
               alt="Udemy Postman Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -109,7 +109,7 @@ function CertificateSlider() {
             <Image
               src={TechApiImage}
               alt="Techcarrer.net API Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg md:w-200 md:h-100 w-160 h-80'
             />
           </div>
         </SwiperSlide>
@@ -126,12 +126,12 @@ function CertificateSlider() {
         modules={[Navigation]}
         className="certificateSwiper"
       >
-        <SwiperSlide className='!flex gap-20'>
+        <SwiperSlide className='!flex xl:gap-20 lg:gap-10'>
           <div>
             <Image
               src={InsiderImage}
               alt="Insider Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
 
@@ -139,7 +139,7 @@ function CertificateSlider() {
             <Image
               src={TechTestImage}
               alt="Techcarrer.net Test Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
 
@@ -147,17 +147,17 @@ function CertificateSlider() {
             <Image
               src={UdemyTestImage}
               alt="Udemy Test Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
           
         </SwiperSlide>
-        <SwiperSlide className='!flex gap-20'>
+        <SwiperSlide className='!flex xl:gap-20 lg:gap-10'>
           <div>
             <Image
               src={TechSeleniumImage}
               alt="Techcarrer.net Selenium Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
 
@@ -165,7 +165,7 @@ function CertificateSlider() {
             <Image
               src={UdemyPostmanImage}
               alt="Udemy Postman Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
 
@@ -173,7 +173,7 @@ function CertificateSlider() {
             <Image
               src={TechApiImage}
               alt="Techcarrer.net API Certificate"
-              className='select-none rounded-lg w-160 h-100'
+              className='select-none rounded-lg xl:w-160 xl:h-100 lg:w-180 lg:h-80'
             />
           </div>
         </SwiperSlide>
